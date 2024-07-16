@@ -18,7 +18,7 @@ export default function FooterCom() {
       Scout
       </Link>
           </div>
-          <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-2 sm:gap-6">
             <div>
 
             <Footer.Title title='About' />
@@ -71,7 +71,7 @@ export default function FooterCom() {
             </div>
 
             {/* legal */}
-            <div>
+            {/* <div>
 
             <Footer.Title title='Legal' />
             <Footer.LinkGroup col>
@@ -94,7 +94,7 @@ export default function FooterCom() {
 
             </Footer.LinkGroup>
 
-            </div>
+            </div> */}
           </div>
         </div>
         <Footer.Divider />
