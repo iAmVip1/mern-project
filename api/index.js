@@ -7,7 +7,7 @@ import authRoutes from './routes/auth.routes.js';
 dotenv.config();
 
 mongoose
-.connect('mongodb+srv://skillscout:skillscout59@project-db.yv21e98.mongodb.net/project-mern?retryWrites=true&w=majority&appName=project-db/')
+.connect(process.env.MONGO)
 .then(() => {
     console.log('MongoDb is connected');
   })

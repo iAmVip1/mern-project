@@ -52,3 +52,15 @@ npm I react-router-dom
 npm i flowbite-react
 
 'node_modules/flowbite-react/**/*.{js,jsx,t,tsx}'
+
+npm i mongose
+
+npm i bcryptjs
+
+npm i dotenv
+
+npm i nodemon
+
+npm i express
+
+npm I jsonwebtoken
