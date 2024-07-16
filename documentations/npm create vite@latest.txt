@@ -1,0 +1,54 @@
+npm create vite@latest
+
+cd client
+
+npm I
+
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
+
+
+tailwindconfig paste
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+npm run dev
+
+app.jsx
+export default function App(){
+    return {
+	<div>App</div>
+    }
+}
+
+try 
+export default function App() {
+  return (
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  )
+}
+
+npm I react-router-dom
+
+npm i flowbite-react
+
+'node_modules/flowbite-react/**/*.{js,jsx,t,tsx}'
