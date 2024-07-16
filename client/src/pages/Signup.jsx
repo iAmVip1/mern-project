@@ -54,7 +54,7 @@ export default function Signup() {
       Scout
       </Link>
       <p className='text-sm mt-5'>
-        Please Login to continue.
+        Please Fill up all fields to create new account.
       </p>
         </div>
         {/* right */}
@@ -78,15 +78,16 @@ export default function Signup() {
 
 
 
-            <Button className='bg-gradient-to-r from-yellow-500 to-purple-600' type='submit' disabled={loading}>
-              {loading ? (
+            <Button className='bg-gradient-to-r from-green-500 to-purple-600' type='submit' >
+              {/* {loading ? (
                 <>
                   <Spinner size='sm' />
                   <span className='pl-3'>Loading...</span>
                 </>
               ) : (
                 'Submit'
-              )}
+              )} */}
+              Register
               </Button>
           </form>
           <div className="flex gap-2 text-sm mt-5">
