@@ -68,3 +68,6 @@ npm I jsonwebtoken
 git commit -m "signin route"
 git branch -M main
 git push -u origin main
+
+.cd client
+npm install @reduxjs/toolkit

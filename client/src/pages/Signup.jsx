@@ -78,16 +78,16 @@ export default function Signup() {
 
 
 
-            <Button className='bg-gradient-to-r from-green-500 to-purple-600' type='submit' >
-              {/* {loading ? (
+            <Button className='bg-gradient-to-r from-green-500 to-purple-600' type='submit' disabled={loading}>
+              {loading ? (
                 <>
                   <Spinner size='sm' />
                   <span className='pl-3'>Loading...</span>
                 </>
               ) : (
-                'Submit'
-              )} */}
-              Register
+                'Register'
+              )}
+              
               </Button>
           </form>
           <div className="flex gap-2 text-sm mt-5">
