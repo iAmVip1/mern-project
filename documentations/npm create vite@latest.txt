@@ -72,3 +72,5 @@ git push -u origin main
 .cd client
 npm install @reduxjs/toolkit
 npm I redux-persist
+
+npm install firebase
