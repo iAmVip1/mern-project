@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture: {
         type: String,
-        default: "https://imageio.forbes.com/specials-images/imageserve/5c76b7d331358e35dd2773a9/0x0.jpg?format=jpg&crop=4401,4401,x0,y0,safe&height=416&width=416&fit=bounds",
+        default: "https://preview.redd.it/avatar-the-way-of-water-opinions-on-chud-v0-smmk2bzmmqha1.jpg?width=640&crop=smart&auto=webp&s=6d739c05de2158bf8989cf58a355b4fded43fd53",
     },
 }, {timestamps:true}
 );
