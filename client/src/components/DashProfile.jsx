@@ -191,7 +191,7 @@ export default function DashProfile() {
         defaultValue={currentUser.email} onChange={handleChange} />
         <TextInput type='password' id='password' placeholder='password'  onChange={handleChange}
          />
-         <Button type='submit' color='lime' outline>
+         <Button className='bg-gradient-to-r from-lime-400 to-lime-500' type='submit'  outline>
           Update
          </Button>
       </form>
