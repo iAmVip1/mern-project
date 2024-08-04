@@ -1,0 +1,17 @@
+changes
+
+discount = phoneNumber
+for rent= contact now
+
+type
+sell: per day
+rent: per hour
+
+parking spot: mechanics
+furnished: Plumber
+offer: Electrician
+(extra) civilEngineer, Catering/ Food services, Medical, Driver
+
+
+no beds, baths
+

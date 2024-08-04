@@ -77,3 +77,5 @@ npm install --save react-circular-progressbar
 
 
 input type for file upload
+
+npm i cookie-parser
