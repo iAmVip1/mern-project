@@ -38,11 +38,7 @@ const listingSchema = new mongoose.Schema(
             type: Boolean,
             required: true,
         },
-        Driver: {
-            type: Boolean,
-            required: true,
-        },
-        electrician: {
+        driver: {
             type: Boolean,
             required: true,
         },
@@ -51,6 +47,10 @@ const listingSchema = new mongoose.Schema(
             required: true,
         },
         catering: {
+            type: Boolean,
+            required: true,
+        },
+        uncategorized: {
             type: Boolean,
             required: true,
         },

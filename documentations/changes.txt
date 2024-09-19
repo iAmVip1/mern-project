@@ -13,5 +13,5 @@ offer: Electrician
 (extra) civilEngineer, Catering/ Food services, Medical, Driver
 
 
-no beds, baths
+no beds, baths, offer
 

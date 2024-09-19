@@ -1,12 +1,13 @@
-import {BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Workers from './pages/Workers'
-import Signin from './pages/Signin'
-import Signup from './pages/Signup'
-import Dashboard from './pages/Dashboard'
-import About from './pages/About'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Workers from './pages/Workers';
+import Signin from './pages/Signin';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import About from './pages/About';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import CreateListing from './pages/CreateListing';
 import PrivateRoute from './components/PrivateRoute'
 
 
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route element = {<PrivateRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path='/create-listing' element={<CreateListing />}  />
         
         </Route>
         <Route path="/about" element={<About />} />
