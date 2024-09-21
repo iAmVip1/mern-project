@@ -14,7 +14,7 @@ export default function CreateListing() {
         name: '',
         description: '',
         address: '',
-        type: 'hour',
+        type: '',
         regularPrice: 0,
         phoneNumber: '',
         plumber: false,
