@@ -27,21 +27,44 @@ export default function DashPosts() {
     }
   }, [currentUser._id]
 )
+
+  const handleListingDelete = async (listingId) => {
+    try {
+      const res = await fetch(`/api/listing/delete/${listingId}`, {
+        method: 'DELETE',
+      });
+      const data = await res.json();
+      if (data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      
+      setUserListings((prev) =>
+      prev.filter((listing) => listing._id !== listingId)
+      );
+
+    } catch (error) {
+      console.log(error.message);
+      
+    }
+  }
+
   return <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar
    scrollbar-track-slate-100
     scrollbar-thumb-slate-300
      dark:scrollbar-track-slate-700
-      dark:scrollbar-thumb-slate-500'>
+      dark:scrollbar-thumb-slate-500
+      '>
     <div className="">
       <h1 className='text-center text-2xl font-semibold '>Your Posts</h1>
     </div>
-      <Table >
+      {/* <Table >
       
-      </Table>
+      </Table> */}
     {userListings && userListings.length > 0 &&
     userListings.map((listing) => 
       <div key={listing._id} className=" ">
-        <Link to={`/listing/${listing._id}`}>
+        {/* <Link to={`/listing/${listing._id}`}> */}
         <Table >
           <Table.Head>
         <Table.HeadCell> Date Updated </Table.HeadCell>
@@ -59,20 +82,23 @@ export default function DashPosts() {
                 {new Date (listing.updatedAt).toLocaleDateString()}
               </Table.Cell>
               <Table.Cell>
+              <Link to={`/listing/${listing._id}`}>
                 <img 
                 src={listing.imageUrls}
                 alt='Cover photo'
                 className='w-20 h-10 object-cover bg-gray-500'
                 />
+                </Link>
               </Table.Cell>
               <Table.Cell>
-                <p className=''>{listing.name}</p>
+                <p className='font-semibold'>{listing.name}</p>
               </Table.Cell>
               <Table.Cell>
               <p className=''>{listing.phoneNumber}</p>
               </Table.Cell>
               <Table.Cell>
-                <button className='text-red-700 hover:underline'>
+                <button onClick={() => handleListingDelete(listing._id)}
+                 className='text-red-700 hover:underline'>
                   Delete
                 </button>
               </Table.Cell>
@@ -85,10 +111,11 @@ export default function DashPosts() {
           </Table.Body>
         </Table>
       {/* <img src={listing.imageUrls [0]} alt='Cover Photo' className=' h-20 w-20 object-contain '  /> */}
-        </Link>
+        {/* </Link> */}
       </div>
     )
-    }
-     hello   </div>
+  }
+  <p className='text-center text-2xl font-semibold '>Your posts ends here </p> 
+      </div>
   
 }
