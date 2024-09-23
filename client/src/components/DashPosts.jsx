@@ -103,9 +103,11 @@ export default function DashPosts() {
                 </button>
               </Table.Cell>
               <Table.Cell>
+                <Link to={`/update-listing/${listing._id}`}>
                 <button className='text-green-500 hover:underline'>
                   Edit
                 </button>
+                </Link>
               </Table.Cell>
             </Table.Row>
           </Table.Body>
