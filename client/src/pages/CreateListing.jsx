@@ -178,62 +178,62 @@ const handleSubmit = async (e) => {
             
             <div className="flex gap-6 flex-wrap">
                 {/* Daily */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center ">
                     <input type="checkbox" id='day' className='w-5' onChange={handleChange} checked={formData.type === 'day'} />
                     <span>Per Day</span>
                 </div>
 
                 {/* Hourly */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='hour' className='w-5' onChange={handleChange} checked={formData.type === 'hour'} />
                     <span>Per Hour</span>
                 </div>
 
                 {/* categories -8 */}
                 {/* Plumber */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center ">
                     <input type="checkbox" id='plumber' className='w-5' onChange={handleChange} checked={formData.plumber} />
                     <span>Plumber</span>
                 </div>
 
                 {/* medical -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='medical' className='w-5' onChange={handleChange} checked={formData.medical } />
                     <span>Medical</span>
                 </div>
 
                 {/* mechanics -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='mechanics' className='w-5' onChange={handleChange} checked={formData.mechanics }  />
                     <span>Mechanics</span>
                 </div>
                 
                 {/* electrician -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='electrician' className='w-5' onChange={handleChange} checked={formData.electrician }  />
                     <span>Electrician</span>
                 </div>
 
                 {/* driver -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='driver' className='w-5' onChange={handleChange} checked={formData.driver }  />
                     <span>Driver</span>
                 </div>
 
                 {/* civilEngineer -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='civilEngineer' className='w-5' onChange={handleChange} checked={formData.civilEngineer}  />
                     <span>Civil Engineer</span>
                 </div>
 
                 {/* catering -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='catering' className='w-5' onChange={handleChange} checked={formData.catering }  />
                     <span>Catering/ Food services</span>
                 </div>
 
                 {/* uncategorized -8 */}
-                <div className="flex gap-2 ">
+                <div className="flex gap-2 flex-wrap items-center">
                     <input type="checkbox" id='uncategorized' className='w-5' onChange={handleChange} checked={formData.uncategorized }  />
                     <span>Uncategorized</span>
                 </div>
