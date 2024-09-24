@@ -16,6 +16,8 @@ import {
   import { MdPlumbing, MdElectricBolt, MdEngineering  } from "react-icons/md";
   import { GiSteeringWheel, GiPartyFlags  } from "react-icons/gi";
   import { GrStatusUnknown } from "react-icons/gr";
+  import { Button } from "flowbite-react";
+import Contact from '../components/Contact';
 
 export default function Listing() {
     SwiperCore.use([Navigation]);
@@ -23,7 +25,9 @@ export default function Listing() {
     // const [copied, setCopied] = useState(false);
     const [loading, setLoading] = useState(false);
     const [ error, setError] = useState(false);
+    const [contact, setContact] = useState(false);
     const params = useParams();
+    const { currentUser } = useSelector((state) => state.user);
     useEffect(() =>{
         const fetchListing = async () => {
             try {
@@ -46,7 +50,7 @@ export default function Listing() {
         }
         fetchListing();
     }, [params.listingId]);
-    console.log(loading);
+    
     
   return (
     <main className='min-h-screen mt-5'>
@@ -227,6 +231,15 @@ export default function Listing() {
 
              </div>           
             </div>
+            {
+              currentUser && listing.userRef !== currentUser._id && !contact && (
+            <Button className='bg-gradient-to-r from-cyan-500 to-blue-500 uppercase w-40 ' outline
+            onClick={() => setContact(true)}>
+              Contact User
+            </Button>
+              )
+            }
+            {contact && <Contact listing={listing} />}
           </div>
         </div>
         }
