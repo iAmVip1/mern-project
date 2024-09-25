@@ -84,3 +84,4 @@ npm install --save-dev tailwind-scrollbar
 
 
 cd client npm i swiper
+cd client npm install -D @tailwindcss/line-clamp

@@ -265,7 +265,11 @@ const handleSubmit = async (e) => {
                 required />
                 <div className="flex flex-col items-center">
                 <p>Regular Pirice</p>
-                <span className='text-xs'>(Rs / Hour)</span>
+
+                {formData.type === 'hour' && (
+                    <span className='text-xs'>(Rs / Hour)</span>                    
+                  )}
+                
                 </div>
             </div>
            </div>
