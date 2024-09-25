@@ -112,12 +112,16 @@ export default function Listing() {
               {listing.description}
             </p>
            
+            {
+              currentUser &&  (
+
             <ul className='text-blue-800 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6 dark:text-green-700 '>
             <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaPhoneAlt className='text-lg mt-6' />
                 <p className='text-black font-semibold dark:text-white mt-6 ml-1'>{listing.phoneNumber}</p>
               </li>
              </ul>
+              )}
              {/* <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6 mt-3 dark:text-white'>
 
              <li className='flex items-center gap-1 whitespace-nowrap '>
