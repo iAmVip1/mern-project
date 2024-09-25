@@ -80,7 +80,9 @@ input type for file upload
 
 npm i cookie-parser
 
-npm install --save-dev tailwind-scrollbar
+
+
+cd client npm install --save-dev tailwind-scrollbar
 
 
 cd client npm i swiper
