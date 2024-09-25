@@ -59,6 +59,7 @@ export default function Home() {
 
       <div className="h-[600px] border border-gray-600 rounded-lg" >
       <Carousel pauseOnHover>
+        <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1726843029388Leonardo_Phoenix_A_bright_yellow_sunflower_with_a_large_dark_c_1.jpg?alt=media&token=8cf9ecfe-9f4a-4b22-8055-9eaad1aa09c2" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727257122527Leonardo_Phoenix_A_sweeping_western_landscape_set_against_a_vi_3.jpg?alt=media&token=5a666f42-2838-4636-a340-a1c0ce33a36c" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253106250Leonardo_Phoenix_A_sleek_silver_aero_plane_soars_through_a_vib_2.jpg?alt=media&token=833beb4b-b028-4589-9d00-0fe6e5304d8c" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253087367_DSC0076.JPG?alt=media&token=5f28bc82-1dda-4939-a2d1-d0057babd40f" alt="..." />
