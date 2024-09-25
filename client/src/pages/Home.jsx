@@ -105,8 +105,8 @@ export default function Home() {
 {dayListings && dayListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for day</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=day'}>Show more places for day</Link>
+              <h2 className='text-2xl font-semibold text-slate-600'>Recent posts for day</h2>
+              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=day'}>Show more posts for day</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
               {dayListings.map((listing) => (
