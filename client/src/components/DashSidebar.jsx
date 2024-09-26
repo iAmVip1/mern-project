@@ -51,7 +51,7 @@ export default function Dashsidebar() {
                 </Sidebar.Item>
                 </Link>
                
-                <Link to= "/dashboard?tab=posts">
+                {/* <Link to= "/dashboard?tab=posts">
                 <Sidebar.Item
                 active ={tab === 'posts'}
                 icon = {HiDocumentText }
@@ -59,7 +59,18 @@ export default function Dashsidebar() {
                 >
                   Posts
                 </Sidebar.Item>
+                </Link> */}
+
+                <Link to= "/dashboard?tab=newposts">
+                <Sidebar.Item
+                active ={tab === 'newposts'}
+                icon = {HiDocumentText }
+                as='div'
+                >
+                 Posts
+                </Sidebar.Item>
                 </Link>
+
                 <Sidebar.Item icon={HiArrowSmRight} className ='cursor-pointer' onClick={handleSignout}>
                     Sign Out
                 </Sidebar.Item>
