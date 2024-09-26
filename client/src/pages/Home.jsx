@@ -59,8 +59,9 @@ export default function Home() {
 
       <div className="h-[600px] border border-gray-600 rounded-lg" >
       <Carousel pauseOnHover>
+        <img src="https://github.com/iAmVip1/mern-project/blob/main/images/test/Leonardo_Phoenix_A_middleaged_bus_driver_with_a_warm_gentle_sm_1.jpg?raw=true" alt="..." />
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e746e8fe-938b-4a91-a3eb-1cbdc6b76143/di8jfdr-9d6b6606-b768-466d-a0ce-615100443d99.jpg/v1/fit/w_828,h_474,q_70,strp/plumber_guy_plumbing_by_ambhooz_di8jfdr-414w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzMyIiwicGF0aCI6IlwvZlwvZTc0NmU4ZmUtOTM4Yi00YTkxLWEzZWItMWNiZGM2Yjc2MTQzXC9kaThqZmRyLTlkNmI2NjA2LWI3NjgtNDY2ZC1hMGNlLTYxNTEwMDQ0M2Q5OS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.fhR9sKa9tgORb7b4Iw_ku17zlrIK7fMBcv6ban4zGb8" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1726843029388Leonardo_Phoenix_A_bright_yellow_sunflower_with_a_large_dark_c_1.jpg?alt=media&token=8cf9ecfe-9f4a-4b22-8055-9eaad1aa09c2" alt="..." />
-        <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727257122527Leonardo_Phoenix_A_sweeping_western_landscape_set_against_a_vi_3.jpg?alt=media&token=5a666f42-2838-4636-a340-a1c0ce33a36c" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253106250Leonardo_Phoenix_A_sleek_silver_aero_plane_soars_through_a_vib_2.jpg?alt=media&token=833beb4b-b028-4589-9d00-0fe6e5304d8c" alt="..." />
         <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253087367_DSC0076.JPG?alt=media&token=5f28bc82-1dda-4939-a2d1-d0057babd40f" alt="..." />
        
