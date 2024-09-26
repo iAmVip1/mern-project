@@ -6,10 +6,12 @@ import { HiUser, HiArrowSmRight} from 'react-icons/hi';
 import { HiDocumentText } from "react-icons/hi2";
 import { signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export default function Dashsidebar() {
     const location = useLocation();
     const dispatch = useDispatch();
+    const { currentUser } = useSelector((state) => state.user);
     const handleSignout = async () =>{
       try {
         const res = await fetch('/api/user/signout', 
@@ -45,7 +47,8 @@ export default function Dashsidebar() {
                 <Sidebar.Item 
                 active ={tab === 'profile'}
                  icon={HiUser} 
-                 label={'User'} labelColor='dark'
+                 label={currentUser.isAdmin ? 'Admin' : 'User'} 
+                 labelColor='dark'
                 as ='div' >
                     Profile
                 </Sidebar.Item>
