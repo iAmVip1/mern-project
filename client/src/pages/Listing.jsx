@@ -18,6 +18,7 @@ import {
   import { GrStatusUnknown } from "react-icons/gr";
   import { Button } from "flowbite-react";
 import Contact from '../components/Contact';
+import CommentSection from '../components/CommentSection';
 
 export default function Listing() {
     SwiperCore.use([Navigation]);
@@ -245,6 +246,7 @@ export default function Listing() {
             }
             {contact && <Contact listing={listing} />}
           </div>
+          <CommentSection listingId={listing._id} />
         </div>
         }
     </main>
