@@ -50,7 +50,7 @@ export default function FooterCom() {
             <Footer.Title title='Follow us' />
             <Footer.LinkGroup col>
               <Footer.Link
-              href='https://github.com/iAmVip1'
+              href='https://github.com/Viserion2000'
               target='_blank'
               rel='noopener noreferrer'
               >

@@ -75,7 +75,7 @@ export default function DashNewPosts() {
         </Table.HeadCell>
       </Table.Head>
       {userListings.map((listing) =>(
-        <Table.Body className='divide-y'>
+        <Table.Body className='divide-y' key={listing._id}>
         <Table.Row className='bg-white dark:border-gray-700 dark:bg-gray-800'>
           <Table.Cell>
             {new Date (listing.updatedAt).toLocaleDateString()}
