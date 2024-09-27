@@ -27,7 +27,7 @@ export default function Dashboard() {
       {tab === 'profile' && <DashProfile />}
 
       {/* posts */}
-      {/* {tab === 'posts' && <DashPosts />}   */}
+      {tab === 'posts' && <DashPosts />}  
 
       {tab === 'newposts' && <DashNewPosts />}  
 
