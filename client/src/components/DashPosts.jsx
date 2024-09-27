@@ -61,13 +61,14 @@ export default function DashNewPosts() {
       {/* <Table >
       
       </Table> */}
-    {userListings && userListings.length > 0 ? (
+    {currentUser.isAdmin && userListings.length > 0 ? (
         <div className=''>
         <Table hoverable className='shadow-md'>
         <Table.Head>
         <Table.HeadCell> Date Updated </Table.HeadCell>
         <Table.HeadCell> Image </Table.HeadCell>
         <Table.HeadCell> Service Name </Table.HeadCell>
+        <Table.HeadCell> Uploaded by </Table.HeadCell>
         <Table.HeadCell> Phone Number </Table.HeadCell>
         <Table.HeadCell> Delete </Table.HeadCell>
         
@@ -91,6 +92,9 @@ export default function DashNewPosts() {
             <p className='font-semibold'>{listing.name}</p>
           </Table.Cell>
           <Table.Cell>
+          <p className=''>{listing.userRef}</p>
+          </Table.Cell>
+          <Table.Cell>
           <p className=''>{listing.phoneNumber}</p>
           </Table.Cell>
           <Table.Cell>
@@ -99,7 +103,6 @@ export default function DashNewPosts() {
               Delete
             </button>
           </Table.Cell>
-
         </Table.Row>
       </Table.Body>
       ))}

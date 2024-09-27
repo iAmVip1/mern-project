@@ -72,6 +72,7 @@ export default function DashUsers() {
               <Table.HeadCell>Date created</Table.HeadCell>
               <Table.HeadCell>User image</Table.HeadCell>
               <Table.HeadCell>Username</Table.HeadCell>
+              <Table.HeadCell>User ID</Table.HeadCell>
               <Table.HeadCell>Email</Table.HeadCell>
               <Table.HeadCell>Admin</Table.HeadCell>
               <Table.HeadCell>Delete</Table.HeadCell>
@@ -90,6 +91,7 @@ export default function DashUsers() {
                     />
                   </Table.Cell>
                   <Table.Cell>{user.username}</Table.Cell>
+                  <Table.Cell>{user._id}</Table.Cell>
                   <Table.Cell>{user.email}</Table.Cell>
                   <Table.Cell>
                     {user.isAdmin ? (

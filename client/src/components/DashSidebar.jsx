@@ -7,6 +7,7 @@ import { HiDocumentText } from "react-icons/hi2";
 import { signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { FaBookReader } from "react-icons/fa";
 
 export default function Dashsidebar() {
     const location = useLocation();
@@ -65,16 +66,18 @@ export default function Dashsidebar() {
               </Sidebar.Item>
             </Link>
           )}
-               
-                {/* <Link to= "/dashboard?tab=posts">
+               {currentUser.isAdmin && (
+                
+                <Link to= "/dashboard?tab=posts">
                 <Sidebar.Item
                 active ={tab === 'posts'}
-                icon = {HiDocumentText }
+                icon = {FaBookReader }
                 as='div'
                 >
-                  Posts
+                 User Posts
                 </Sidebar.Item>
-                </Link> */}
+                </Link>
+               )}
 
                 <Link to= "/dashboard?tab=newposts">
                 <Sidebar.Item
