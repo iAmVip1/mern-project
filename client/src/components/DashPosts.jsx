@@ -69,7 +69,7 @@ export default function DashNewPosts() {
         <Table.HeadCell> Image </Table.HeadCell>
         <Table.HeadCell> Service Name </Table.HeadCell>
         <Table.HeadCell> Uploaded by </Table.HeadCell>
-        <Table.HeadCell> Phone Number </Table.HeadCell>
+        <Table.HeadCell> Post Id </Table.HeadCell>
         <Table.HeadCell> Delete </Table.HeadCell>
         
       </Table.Head>
@@ -95,7 +95,7 @@ export default function DashNewPosts() {
           <p className=''>{listing.userRef}</p>
           </Table.Cell>
           <Table.Cell>
-          <p className=''>{listing.phoneNumber}</p>
+          <p className=''>{listing._id}</p>
           </Table.Cell>
           <Table.Cell>
             <button onClick={() => handleListingDelete(listing._id)}

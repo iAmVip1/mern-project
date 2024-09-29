@@ -7,7 +7,7 @@ import { HiDocumentText } from "react-icons/hi2";
 import { signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { FaBookReader } from "react-icons/fa";
+import { FaBookReader, FaRegCommentAlt  } from "react-icons/fa";
 
 export default function Dashsidebar() {
     const location = useLocation();
@@ -88,6 +88,19 @@ export default function Dashsidebar() {
                  Posts
                 </Sidebar.Item>
                 </Link>
+
+                {currentUser.isAdmin && ( 
+                  
+                <Link to= "/dashboard?tab=comments">
+                <Sidebar.Item
+                active ={tab === 'comments'}
+                icon = {FaRegCommentAlt  }
+                as='div'
+                >
+                 Total Comments
+                </Sidebar.Item>
+                </Link>
+                )}
 
                 <Sidebar.Item icon={HiArrowSmRight} className ='cursor-pointer' onClick={handleSignout}>
                     Sign Out
