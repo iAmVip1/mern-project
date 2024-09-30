@@ -8,6 +8,7 @@ import { signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { FaBookReader, FaRegCommentAlt  } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
 
 export default function Dashsidebar() {
     const location = useLocation();
@@ -44,6 +45,19 @@ export default function Dashsidebar() {
     <Sidebar className='w-full md:w-56'>
         <Sidebar.Items>
             <Sidebar.ItemGroup className='flex flex-col gap-1'>
+
+            {currentUser && currentUser.isAdmin && (
+            <Link to='/dashboard?tab=dashb'>
+              <Sidebar.Item
+                active={tab === 'dashb' || !tab}
+                icon={MdDashboard}
+                as='div'
+              >
+                Dashboard
+              </Sidebar.Item>
+            </Link>
+          )}
+
                 <Link to={"/dashboard?tab=profile"}>
                 <Sidebar.Item 
                 active ={tab === 'profile'}
@@ -97,7 +111,7 @@ export default function Dashsidebar() {
                 icon = {FaRegCommentAlt  }
                 as='div'
                 >
-                 Total Comments
+                 All User Comments
                 </Sidebar.Item>
                 </Link>
                 )}
