@@ -57,13 +57,13 @@ export default function Home() {
     </div>
       {/* swiper */}
 
-      <div className="h-[600px] border border-gray-600 rounded-lg" >
+      <div className="h-[768px]  border border-gray-600 rounded-lg" >
       <Carousel pauseOnHover>
         <img src="https://github.com/iAmVip1/mern-project/blob/main/images/test/Leonardo_Phoenix_A_middleaged_bus_driver_with_a_warm_gentle_sm_1.jpg?raw=true" alt="..." />
-        <img src="https://github.com/iAmVip1/mern-project/blob/main/images/sized/Leonardo_Phoenix_A_smiling_black_male_doctor_in_his_mid40s_wit_0.jpg?raw=true" alt="..." />
-        <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1726843029388Leonardo_Phoenix_A_bright_yellow_sunflower_with_a_large_dark_c_1.jpg?alt=media&token=8cf9ecfe-9f4a-4b22-8055-9eaad1aa09c2" alt="..." />
-        <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253106250Leonardo_Phoenix_A_sleek_silver_aero_plane_soars_through_a_vib_2.jpg?alt=media&token=833beb4b-b028-4589-9d00-0fe6e5304d8c" alt="..." />
-        <img src="https://firebasestorage.googleapis.com/v0/b/college-project-7295c.appspot.com/o/1727253087367_DSC0076.JPG?alt=media&token=5f28bc82-1dda-4939-a2d1-d0057babd40f" alt="..." />
+        <img src="https://github.com/iAmVip1/mern-project/blob/main/images/home%20page/Leonardo_Phoenix_A_smiling_black_male_doctor_in_his_mid40s_wit_1.jpg?raw=true" alt="..." />
+        <img src="https://cdn.leonardo.ai/users/93a77815-3631-4894-bff3-e76521e61b6b/generations/f08e1d9f-6d37-449a-9cd6-98a214e84ecf/Leonardo_Phoenix_A_warm_and_inviting_photograph_of_a_catering_1.jpg" alt="..." />
+        <img src="https://github.com/iAmVip1/mern-project/blob/main/images/home%20page/Leonardo_Phoenix_A_warm_and_inviting_scene_of_a_skilled_mechan_3.jpg?raw=true" alt="..." />
+        <img src="https://cdn.leonardo.ai/users/93a77815-3631-4894-bff3-e76521e61b6b/generations/856270e9-c382-45e9-99e2-c689e351e3cc/Leonardo_Phoenix_A_mature_plumber_in_his_mid40s_with_a_rugged_2.jpg" alt="..." />
        
       </Carousel>
     </div>
