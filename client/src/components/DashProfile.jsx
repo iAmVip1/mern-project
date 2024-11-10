@@ -216,11 +216,12 @@ export default function DashProfile() {
          <Button className='bg-gradient-to-r from-lime-400 to-lime-500' type='submit'  outline>
           Update
          </Button>
-
+         {!currentUser.isAdmin && (
         <Link className='bg-green-500 p-3 rounded-lg uppercase text-center hover:opacity-70 text-white' 
          to={"/create-listing"} >
         Create Post
         </Link>
+         )}
 
       </form>
       <div className="text-red-500 flex justify-between mt-5">

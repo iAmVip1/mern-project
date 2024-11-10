@@ -92,7 +92,8 @@ export default function Dashsidebar() {
                 </Sidebar.Item>
                 </Link>
                )}
-
+              
+              {!currentUser.isAdmin && (
                 <Link to= "/dashboard?tab=newposts">
                 <Sidebar.Item
                 active ={tab === 'newposts'}
@@ -102,7 +103,7 @@ export default function Dashsidebar() {
                  Posts
                 </Sidebar.Item>
                 </Link>
-
+              )}
                 {currentUser.isAdmin && ( 
                   
                 <Link to= "/dashboard?tab=comments">
