@@ -13,6 +13,7 @@ import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
 import ScrollToTop from './components/ScrollToTop';
+import CreateApplication from './pages/CreateApplication';
 
 
 export default function App() {
@@ -33,7 +34,8 @@ export default function App() {
             path='/update-listing/:listingId'
             element={<UpdateListing />}
           />
-        
+        <Route path='/create-application' element={<CreateApplication />}  />
+
         </Route>
         <Route path="/about" element={<About />} />
         
