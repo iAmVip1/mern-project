@@ -37,7 +37,7 @@ export default function FooterCom() {
               rel='noopener noreferrer'
               >
 
-                What we Do
+                Help and Support
               </Footer.Link>
 
             </Footer.LinkGroup>
@@ -123,6 +123,6 @@ export default function FooterCom() {
           </div>
         </div>
       </div>
-      </Footer>
+      </Footer> 
   )
 }

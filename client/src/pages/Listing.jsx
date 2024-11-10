@@ -238,7 +238,7 @@ export default function Listing() {
             </div>
             {
               currentUser && listing.userRef !== currentUser._id && !contact && (
-            <Button className='bg-gradient-to-r from-cyan-500 to-blue-500 uppercase w-40 ' outline
+            <Button className='bg-gradient-to-r from-cyan-500 to-blue-500 uppercase ' outline
             onClick={() => setContact(true)}>
               Contact User
             </Button>

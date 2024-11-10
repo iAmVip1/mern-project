@@ -130,6 +130,32 @@ export const getListings = async (req, res, next) => {
       type = { $in: ['day', 'hour'] };
     }
 
+    // algorithm starts from here
+
+    const searchListings = async (req, res) => {
+      
+    
+      try {
+        // Step 1: Fetch all documents 
+        const allListings = await Listing.find();
+    
+        // Step 2: Filter listings using a simple substring search
+        const filteredListings = allListings.filter(listing => {
+          return (
+            (listing.name && listing.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
+            (listing.address && listing.address.toLowerCase().includes(searchTerm.toLowerCase()))
+          );
+        });
+    
+        res.status(200).json(filteredListings);
+      } catch (error) {
+        res.status(500).json({ message: 'Error fetching listings', error });
+      }
+    };
+    
+
+    // algorithm ends here
+
     const searchTerm = req.query.searchTerm || '';
 
     const sort = req.query.sort || 'createdAt';
