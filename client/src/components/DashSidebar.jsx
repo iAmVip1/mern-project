@@ -8,6 +8,7 @@ import { signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { FaBookReader, FaRegCommentAlt  } from "react-icons/fa";
+import { FaWpforms, FaFileContract  } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 
 export default function Dashsidebar() {
@@ -58,16 +59,18 @@ export default function Dashsidebar() {
             </Link>
           )}
 
-                <Link to={"/dashboard?tab=profile"}>
-                <Sidebar.Item 
-                active ={tab === 'profile'}
-                 icon={HiUser} 
-                 label={currentUser.isAdmin ? 'Admin' : 'User'} 
-                 labelColor='dark'
-                as ='div' >
-                    Profile
-                </Sidebar.Item>
-                </Link>
+<Link to={"/dashboard?tab=profile"}>
+    <Sidebar.Item 
+        active={tab === 'profile'}
+        icon={HiUser} 
+        label={currentUser.isAdmin ? 'Admin' : currentUser.isWorker ? 'Worker' : currentUser._id ? 'User' : ''}
+        labelColor='dark'
+        as='div'
+    >
+        Profile
+    </Sidebar.Item>
+</Link>
+
 
                 {currentUser.isAdmin && (
             <Link to='/dashboard?tab=users'>
@@ -92,8 +95,20 @@ export default function Dashsidebar() {
                 </Sidebar.Item>
                 </Link>
                )}
+               {currentUser.isAdmin && (
+                
+                <Link to= "/dashboard?tab=posts">
+                <Sidebar.Item
+                active ={tab === 'posts'}
+                icon = {FaFileContract }
+                as='div'
+                >
+                 User Applications
+                </Sidebar.Item>
+                </Link>
+               )}
               
-              {!currentUser.isAdmin && (
+              {currentUser.isWorker && (
                 <Link to= "/dashboard?tab=newposts">
                 <Sidebar.Item
                 active ={tab === 'newposts'}
@@ -104,6 +119,19 @@ export default function Dashsidebar() {
                 </Sidebar.Item>
                 </Link>
               )}
+              
+              {!currentUser.isWorker && !currentUser.isAdmin &&  (
+                <Link to= "/dashboard?tab=dashApp">
+                <Sidebar.Item
+                active ={tab === 'dashApp'}
+                icon = {FaWpforms }
+                as='div'
+                >
+                 Applications
+                </Sidebar.Item>
+                </Link>
+              )}
+              
                 {currentUser.isAdmin && ( 
                   
                 <Link to= "/dashboard?tab=comments">

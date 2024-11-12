@@ -8,6 +8,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import 'react-circular-progressbar/dist/styles.css';
 import { updateStart, updateSuccess, updateFailure, deleteUserStart, deleteUserSuccess, deleteUserFailure, signoutSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 
@@ -216,10 +217,18 @@ export default function DashProfile() {
          <Button className='bg-gradient-to-r from-lime-400 to-lime-500' type='submit'  outline>
           Update
          </Button>
-         {!currentUser.isAdmin && (
+         
+         {currentUser.isWorker && (
         <Link className='bg-green-500 p-3 rounded-lg uppercase text-center hover:opacity-70 text-white' 
          to={"/create-listing"} >
         Create Post
+        </Link>
+         )}
+
+         {!currentUser.isWorker && !currentUser.isAdmin &&  (
+        <Link className='bg-blue-500 p-3 rounded-lg uppercase text-center hover:opacity-70 text-white' 
+         to={"/create-application"} >
+        Become a worker
         </Link>
          )}
 
