@@ -2,6 +2,7 @@ import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
 import User from '../models/user.model.js';
 import Listing from '../models/listing.model.js';
+import Application from '../models/application.model.js';
 
 export const test = (req, res) => {
     res.json({message: 'Api is working'});
@@ -87,6 +88,20 @@ export const getUserListings = async (req, res, next) => {
     }
   } else {
     return next (errorHandler(401, 'You can only view your own listings!'));
+  }
+}
+
+
+export const getUserApplications = async (req, res, next) => {
+  if (req.user.id === req.params.id) {
+    try {
+      const applications = await Application.find({ userRef: req.params.id});
+      res.status(200).json(applications);
+    } catch (error) {
+      next (error)
+    }
+  } else {
+    return next (errorHandler(401, 'You can only view your own applications!'));
   }
 }
 
