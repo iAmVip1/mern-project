@@ -14,6 +14,7 @@ import Listing from './pages/Listing';
 import Search from './pages/Search';
 import ScrollToTop from './components/ScrollToTop';
 import CreateApplication from './pages/CreateApplication';
+import Agreement from './pages/Agreement';
 
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
             element={<UpdateListing />}
           />
         <Route path='/create-application' element={<CreateApplication />}  />
+        <Route path='/agree' element={<Agreement />}  />
 
         </Route>
         <Route path="/about" element={<About />} />

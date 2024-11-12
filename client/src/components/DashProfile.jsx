@@ -227,7 +227,7 @@ export default function DashProfile() {
 
          {!currentUser.isWorker && !currentUser.isAdmin &&  (
         <Link className='bg-blue-500 p-3 rounded-lg uppercase text-center hover:opacity-70 text-white' 
-         to={"/create-application"} >
+         to={"/agree"} >
         Become a worker
         </Link>
          )}

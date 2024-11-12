@@ -46,7 +46,7 @@ export default function About() {
         <h2 className='font-semibold text-2xl'>Our Commitment to You</h2>
 
         <p className='mb-7 text-justify'>
-        SkillScout, we will provide you the best platform and we’ll upgrade the website as per needed in near future. Any issue 
+        SkillScout, we will provide you the best platform and we'll upgrade the website as per needed in near future. Any issue 
         that is rise will be solve within the short time period as our ability. 
         </p>
         
