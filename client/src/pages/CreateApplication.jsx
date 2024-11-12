@@ -142,6 +142,7 @@ const handleSubmit = async (e) => {
                 ...formData,
                 userRef: currentUser._id,
                 userMail: currentUser.email,
+                userImage: currentUser.profilePicture,
             }),
         });
 
