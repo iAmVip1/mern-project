@@ -6,6 +6,8 @@ import {useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 
 export default function CreateApplication() {
+    const navigate = useNavigate();
+    const {currentUser} = useSelector(state => state.user)
     const [files, setFiles] = useState([]);
     // const [filesCv, setFilesCv] = useState([]);
     const [formData, setFromData] = useState({
@@ -24,6 +26,8 @@ export default function CreateApplication() {
     const [cvUploadError, setCvUploadError] = useState(false);
     const [uploading, setUploading] = useState(false);
     const [uploadingCv, setUploadingCV] = useState(false);
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     console.log(formData);
     
     const handleImageSubmit = (e) => {
@@ -109,6 +113,51 @@ const handleRemoveImage = (index) => {
     })
 }
     
+const handleChange = (e) => {
+    if (e.target.type === 'number' || e.target.type === 'text' ) {
+        setFromData({
+           ...formData,
+           [e.target.id]: e.target.value
+        })   
+       } 
+}
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        if (formData.imageUrls.length < 1) return setError('You must upload at least one image')
+        if (formData.cvUrls.length < 1) return setError('You must upload your CV')
+            if (formData.phoneNumber1.length < 10) return setError('Phone numbers must be 10 numbers')
+            if (formData.phoneNumber2.length < 10) return setError('Phone numbers must be 10 numbers')
+            if (formData.phoneNumber1 == formData.phoneNumber2) return setError('Phone numbers must be different')
+             
+        setLoading(true);
+        setError(false);
+        const res = await fetch ('/api/application/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+                ...formData,
+                userRef: currentUser._id,
+                userMail: currentUser.email,
+            }),
+        });
+
+        const data = await res.json();
+        setLoading(false);
+        if (data.success === false){
+            setError(data.message);
+        }
+        navigate (`/application/${data._id}`)
+    } catch (error) {
+        setError(error.message);
+        setLoading(false);
+
+    }
+}
+
 
   return (
     <main className='p-3 max-w-4xl mx-auto min-h-screen'>
@@ -116,46 +165,59 @@ const handleRemoveImage = (index) => {
             <span className='px-2 py-1 bg-gradient-to-r from-yellow-500 to-purple-600
        rounded-lg text-white '>Skills </span>
       Scout's Application Form </h1>
-        <form className='flex flex-col sm:flex-row gap-4' >
+        <form onSubmit={handleSubmit} className='flex flex-col sm:flex-row gap-4' >
         <div className="flex flex-col gap-4 flex-1 ">
             <h1 className='text-center font-semibold bg-orange-300 p-2 border rounded-lg text-gray-800' > 
                 Your Details</h1>
         <input type="text" placeholder='First Name'
              className='border-gray-300 p-3 rounded-lg text-black' 
              id='fname'
-
+             onChange={handleChange}
+             value={formData.fname}
              required />
 
              <input type="text" placeholder='Middle Name'
              className='border-gray-300 p-3 rounded-lg text-black' 
              id='mname'
-                         
-             required />
+             onChange={handleChange}
+             value={formData.mname}
+             />
 
              <input type="text" placeholder='Last Name'
              className='border-gray-300 p-3 rounded-lg text-black' 
              id='lname'
-                         
+             onChange={handleChange}
+             value={formData.lname}            
              required />
 
-            <input type="text" placeholder='Permanent Address' className='border-gray-300 p-3 rounded-lg text-black' id='paddress' 
-           
+            <input type="text" 
+            placeholder='Permanent Address' 
+            className='border-gray-300 p-3 rounded-lg text-black' 
+            id='paddress' 
+            onChange={handleChange}
+            value={formData.paddress}
             required />
 
-            <input type="text" placeholder='Temporary Address' className='border-gray-300 p-3 rounded-lg text-black' id='taddress' 
-           
+            <input type="text" 
+            placeholder='Temporary Address' 
+            className='border-gray-300 p-3 rounded-lg text-black' 
+            id='taddress' 
+            onChange={handleChange}
+            value={formData.taddress}
             required />
 
             <input type="number" placeholder='Contact Number' 
             className='border-gray-300 p-3 rounded-lg text-black' 
             id='phoneNumber1' 
-            
+            onChange={handleChange}
+            value={formData.phoneNumber1}
             required />
 
             <input type="number" placeholder='Contact Number 2' 
             className='border-gray-300 p-3 rounded-lg text-black' 
             id='phoneNumber2' 
-           
+            onChange={handleChange}
+            value={formData.phoneNumber2}
             required />
 
         </div>
@@ -213,11 +275,12 @@ const handleRemoveImage = (index) => {
             ))
         }
 
-            <Button className='bg-gradient-to-r from-fuchsia-500 to-cyan-500' type='submit'  outline>
-          Submit
+            <Button
+            disabled={loading || uploading || uploadingCv}
+            className='bg-gradient-to-r from-fuchsia-500 to-cyan-500' type='submit'  outline>
+          {loading ? 'Creating...' : 'Pay & Submit'}
          </Button>
-
-
+         {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
         
              </form>

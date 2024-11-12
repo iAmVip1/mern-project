@@ -42,6 +42,10 @@ const applicationSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+    userMail: {
+        type: String,
+        required: true,
+    },
 },
 {timestamps: true}
 
