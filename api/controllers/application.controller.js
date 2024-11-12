@@ -49,3 +49,15 @@ export const updateApplication = async (req, res, next) =>{
         next(error)
     }
 }
+
+export const getApplication = async (req, res, next) => {
+    try {
+        const application = await Application.findById(req.params.id);
+        if (!application) {
+            return next(errorHandler(404, 'Application not found'))
+        }
+        res.status(200).json(application);
+    } catch (error) {
+        next(error)
+    } 
+    }
