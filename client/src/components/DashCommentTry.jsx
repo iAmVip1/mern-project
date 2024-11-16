@@ -66,12 +66,12 @@ export default function DashCommentTry() {
 
   const toggleIsWorker = async (userId, currentStatus) => {
     try {
-      const res = await fetch(`/api/user/${userId}/isWorker`, {
-        method: 'PATCH',
+      const res = await fetch(`/api/user/update/${userId}`, {
+        method: 'PUT', // Use PUT or PATCH as the method
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ isWorker: !currentStatus }),
+        body: JSON.stringify({ isWorker: !currentStatus }), // Send the updated isWorker value
       });
       const data = await res.json();
       if (res.ok) {
@@ -87,6 +87,7 @@ export default function DashCommentTry() {
       console.log(error.message);
     }
   };
+  
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>

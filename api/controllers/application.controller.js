@@ -61,3 +61,51 @@ export const getApplication = async (req, res, next) => {
         next(error)
     } 
     }
+
+    export const getApplications = async (req, res, next) => {
+      try {
+          const limit = parseInt(req.query.limit) || 9;
+          const startIndex = parseInt(req.query.startIndex) || 0;
+
+          const searchTerm = req.query.searchTerm || '';
+
+    const sort = req.query.sort || 'createdAt';
+
+    const order = req.query.order || 'desc';
+    const query = {};
+
+          if (searchTerm) {
+            query.$or = [
+              { name: { $regex: searchTerm, $options: 'i' } },
+              { address: { $regex: searchTerm, $options: 'i' } },
+            ];
+          }
+      
+      const Applications = await Application.find(query)
+        .sort({ [sort]: order })
+        .limit(limit)
+        .skip(startIndex);
+  
+        const totalApplications = await Application.countDocuments();
+  
+      const now = new Date();
+  
+      const oneMonthAgo = new Date(
+        now.getFullYear(),
+        now.getMonth() - 1,
+        now.getDate()
+      );
+  
+      const lastMonthApplications = await Application.countDocuments({
+        createdAt: { $gte: oneMonthAgo },
+      });
+  
+      
+  
+        return res.status(200).json(Applications, totalApplications,
+          lastMonthApplications,);
+  
+      } catch (error) {
+          next(error);
+      }
+  }

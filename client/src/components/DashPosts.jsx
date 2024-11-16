@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Modal, Table, Button } from 'flowbite-react';
 
-export default function DashNewPosts() {
+export default function DashPosts() {
   const {currentUser} = useSelector((state) => state.user)
   const [userPosts, setUserPosts] = useState ([])
   const [userListings, setUserListings] = useState ([])

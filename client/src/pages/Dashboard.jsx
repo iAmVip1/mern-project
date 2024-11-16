@@ -9,6 +9,7 @@ import DashComments from "../components/DashComments";
 import DashCommentTry from "../components/DashCommentTry";
 import DashboardComp from "../components/DashboardComp";
 import DashUserApplication from "../components/DashUserApplication";
+import DashAllApplication from "../components/DashAllApplication";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -52,6 +53,8 @@ export default function Dashboard() {
     {/* DashboardApplication */}
 
     {tab === 'dashApp' && <DashUserApplication />}
+
+    {tab === 'dashAppAll' && <DashAllApplication />}
 
     </div>
   )
