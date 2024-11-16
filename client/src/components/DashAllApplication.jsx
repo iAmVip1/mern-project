@@ -111,7 +111,7 @@ export default function DashAllApplication() {
         </div>
     ):(
     
-        <p className='text-center text-2xl font-semibold '>You have no posts </p> 
+        <p className='text-center text-2xl font-semibold '>No applications </p> 
     )    
   }
  

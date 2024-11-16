@@ -5,6 +5,7 @@ import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
+import { Button } from 'flowbite-react';
 
 export default function Application() {
   SwiperCore.use([Navigation]);
@@ -42,50 +43,111 @@ export default function Application() {
       <h1 className="text-3xl font-semibold text-center my-7">
         <span className="px-2 py-1 bg-gradient-to-r from-yellow-500 to-purple-600 rounded-lg text-white">Skills</span> Scout
       </h1>
-      <div className="flex flex-col sm:flex-row gap-4 pt-7">
-        <div className="flex flex-col gap-4 flex-1">
-          <p className="text-2xl font-semibold">
-            Full Name: <span className="font-normal">{application && `${application.fname} ${application.mname} ${application.lname}`}</span>
-          </p>
-          <p className="text-2xl font-semibold">
-            Permanent Address: <span className="font-normal">{application && application.paddress}</span>
-          </p>
-          <p className="text-2xl font-semibold">
-            Temporary Address: <span className="font-normal">{application && application.taddress}</span>
-          </p>
-          <p className="text-2xl font-semibold">
-            Contact Number: <span className="font-normal">{application && `${application.phoneNumber1}, ${application.phoneNumber2}`}</span>
-          </p>
-        </div>
-        <div className="flex flex-col flex-1 gap-4">
-        <div className="flex gap-4">
-            <p>User Image: </p>
-          <div className="">
+      <div className='m-20px m-auto w-80% font-semibold'>
+      <form>
+        <table className='w-100%'>
+          <tbody>
+          <tr>
+              <td colSpan="4" 
+              className="text-center font-semibold bg-green-300 p-2 rounded-lg text-gray-800">User Details</td>
+            </tr>
+            <tr>
+              <td className="label">Full Name: </td>
+              
+              <td colSpan="2">
+        {application && `${application.fname} ${application.mname} ${application.lname}`}
+              </td>
+              <td rowSpan="3" className="text-center">
+                <p>User's Image</p>
+              <img  src={application && application.userImage} alt='listing image' 
+              className='w-60 h-22 object-cover rounded-lg' />
             
-          <img src={application && application.userImage} alt='listing image' className='w-50 h-25 object-contain rounded-lg' />
-            
-          </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="label">Permanent Address:</td>
+              <td colSpan="2">
+              {application && application.paddress}
+              </td>
+            </tr>
+            <tr>
+              <td className="label"> Temporary Address: </td>
+              <td colSpan="2">
+              {application && application.taddress}
+              </td>
+            </tr>
+            <tr>
+              <td className="label">Contact Number: </td>
+             {application && `${application.phoneNumber1}, ${application.phoneNumber2}`}
+            </tr>
+            <tr>
+              <td className="label">
+              </td>
+              
+              <td>
+              <p className="text-2xl font-semibold">
+            <span className="font-normal"></span>
+          </p>
 
-        </div>
-            <p>User Documents: </p>
-          <div className="">
-            <img src={application && application.imageUrls} className='h-20 w-30' />
-          </div>
-          User CV
-          {application && application.cvUrls ? (
+              </td>
+              <td><pre>                                               </pre></td>
+              
+              <td></td>
+            </tr>
+            <tr>
+              <td colSpan="4" 
+              className="text-center font-semibold bg-orange-300 p-2 rounded-lg text-gray-800">User Documents</td>
+            </tr>
+            <tr>
+              <td colSpan="4" className="centered">
+                {application && 
+                <Swiper navigation>
+                {application.imageUrls.map((url) => (
+                  <SwiperSlide key={url}>
+                    <div
+                      className='h-[450px]'
+                      style={{
+                        background: `url(${url}) center no-repeat`,
+                        
+                        backgroundSize: 'contain'
+                        ,
+                      }}
+                    ></div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>}
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="4" className="text-center font-semibold bg-purple-300 p-2 rounded-lg text-gray-800 ">
+                User's Curriculum Vitae</td>
+            </tr>
+            <tr>
+              <td colSpan="4" className="centered">
+              {application && application.cvUrls ? (
             <iframe
               src={application.cvUrls}
               title="CV PDF"
               className="w-full h-96 border rounded-lg"
-              frameBorder="0"
+              frameBorder="3"
             />
           ) : (
             <div className="text-center font-semibold bg-purple-300 p-2 border rounded-lg text-gray-800">
               CV not available
             </div>
           )}
-        </div>
-      </div>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="4" className=" ">
+                <Button className='w-full' outline> Set Worker </Button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+
     </main>
   );
 }

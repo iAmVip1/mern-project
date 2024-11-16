@@ -50,6 +50,10 @@ const applicationSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+    isWorker: {
+        type: Boolean,
+        default: false, 
+      },  
 },
 {timestamps: true}
 

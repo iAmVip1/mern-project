@@ -97,9 +97,9 @@ export default function Dashsidebar() {
                )}
                {currentUser.isAdmin && (
                 
-                <Link to= "/dashboard?tab=posts">
+                <Link to= "/dashboard?tab=dashAppAll">
                 <Sidebar.Item
-                active ={tab === 'posts'}
+                active ={tab === 'dashAppAll'}
                 icon = {FaFileContract }
                 as='div'
                 >
