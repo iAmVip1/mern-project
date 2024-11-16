@@ -54,8 +54,8 @@ app.post('/payment', async (req, res) => {
               }
           ],
           mode: 'payment',
-          success_url: 'http://localhost:3000/success',
-          cancel_url: 'http://localhost:3000/cancel',
+          success_url: 'http://localhost:5173/dashboard?tab=dashApp',
+          cancel_url: 'http://localhost:5173/dashboard?tab=profile',
           customer_email: req.body.email,
       });
 

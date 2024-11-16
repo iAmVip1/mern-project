@@ -251,13 +251,13 @@ const handleSubmit = async (e) => {
             <p className='text-red-700 text-sm'>{ cvUploadError && cvUploadError }</p>
 
             <p className='font-semibold'>Images:
-            <span className='font-normal text-gray-500 ml-2'>Please upload your certificates or license
+            <span className='font-normal text-gray-500 ml-2'>Please upload your certificate or license
                 </span>    
             </p>
             <div className="flex gap-4">
                 <input onChange={(e)=>setFiles(e.target.files)}
                  className='p-1 border border-gray-300 rounded w-full' 
-                 type='file' id='images' accept='image/*' multiple />
+                 type='file' id='images' accept='image/*' />
                 <button type='button'
                 disabled={uploading}
                 onClick={handleImageSubmit}
