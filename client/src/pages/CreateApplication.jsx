@@ -4,6 +4,7 @@ import { app } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import {useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
 
 export default function CreateApplication() {
     const navigate = useNavigate();
@@ -152,7 +153,10 @@ const handleSubmit = async (e) => {
         if (data.success === false){
             setError(data.message);
         }
-        navigate (`/application/${data._id}`)
+        const response = await axios.post('http://localhost:3000/payment');
+      if (response.status === 200) {
+        window.location.href = response.data.url;
+      }
     } catch (error) {
         setError(error.message);
         setLoading(false);
