@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
@@ -57,10 +57,10 @@ export default function Application() {
               <td colSpan="2">
         {application && `${application.fname} ${application.mname} ${application.lname}`}
               </td>
-              <td rowSpan="3" className="text-center">
+              <td rowSpan="5" className="text-center">
                 <p>User's Image</p>
               <img  src={application && application.userImage} alt='listing image' 
-              className='w-60 h-22 object-cover rounded-lg' />
+              className='w-60 h-22 object-cover bg-gray-500 rounded-lg' />
             
               </td>
             </tr>
@@ -74,6 +74,12 @@ export default function Application() {
               <td className="label"> Temporary Address: </td>
               <td colSpan="2">
               {application && application.taddress}
+              </td>
+            </tr>
+            <tr>
+              <td className="label"> User Email: </td>
+              <td colSpan="2">
+              {application && application.userMail}
               </td>
             </tr>
             <tr>
@@ -138,11 +144,18 @@ export default function Application() {
           )}
               </td>
             </tr>
+
+            {currentUser.isAdmin &&(
+
             <tr>
               <td colSpan="4" className=" ">
+                <Link to='/dashboard?tab=trycomments'> 
                 <Button className='w-full' outline> Set Worker </Button>
+                 </Link>
+                
                 </td>
             </tr>
+            )}
           </tbody>
         </table>
       </form>
