@@ -111,6 +111,7 @@ export default function Application() {
                 <Swiper navigation>
                 {application.imageUrls.map((url) => (
                   <SwiperSlide key={url}>
+                    <a  href={url} target="_blank" rel="noopener noreferrer">
                     <div
                       className='h-[450px]'
                       style={{
@@ -120,6 +121,7 @@ export default function Application() {
                         ,
                       }}
                     ></div>
+                    </a>
                   </SwiperSlide>
                 ))}
               </Swiper>}
