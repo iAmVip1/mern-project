@@ -60,7 +60,7 @@ export default function Application() {
               <td rowSpan="5" className="text-center">
                 <p>User's Image</p>
               <img  src={application && application.userImage} alt='listing image' 
-              className='w-60 h-22 object-cover bg-gray-500 rounded-lg' />
+              className='w-40 h-30 object-cover bg-gray-500 rounded-lg' />
             
               </td>
             </tr>
@@ -83,9 +83,10 @@ export default function Application() {
               </td>
             </tr>
             <tr>
-              <td className="label">Contact Number: </td>
-             {application && `${application.phoneNumber1}, ${application.phoneNumber2}`}
-            </tr>
+  <td className="label">Contact Number: </td>
+  <td colSpan="3">{application && `${application.phoneNumber1}, ${application.phoneNumber2}`}</td>
+</tr>
+
             <tr>
               <td className="label">
               </td>

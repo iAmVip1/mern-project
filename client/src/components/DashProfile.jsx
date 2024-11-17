@@ -211,7 +211,7 @@ export default function DashProfile() {
         <TextInput type='text' id='username' placeholder='username' 
         defaultValue={currentUser.username} onChange={handleChange} />
         <TextInput type='text' id='email' placeholder='email' 
-        defaultValue={currentUser.email} onChange={handleChange} />
+        defaultValue={currentUser.email} onChange={handleChange} disabled />
         <TextInput type='password' id='password' placeholder='password'  onChange={handleChange}
          />
          <Button className='bg-gradient-to-r from-lime-400 to-lime-500' type='submit'  outline>
