@@ -126,7 +126,7 @@ export default function DashCommentTry() {
                       color={user.isWorker ? 'failure' : 'success'}
                       onClick={() => toggleIsWorker(user._id, user.isWorker)}
                     >
-                      {user.isWorker ? 'Unset Worker' : 'Set Worker'}
+                      {user.isWorker ? 'Unset Worker' : 'Set as Worker'}
                     </Button>
                   </Table.Cell>
                   <Table.Cell>

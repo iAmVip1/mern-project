@@ -257,7 +257,7 @@ const handleSubmit = async (e) => {
             <div className="flex gap-4">
                 <input onChange={(e)=>setFiles(e.target.files)}
                  className='p-1 border border-gray-300 rounded w-full' 
-                 type='file' id='images' accept='image/*' />
+                 type='file' id='images' accept='image/*' multiple />
                 <button type='button'
                 disabled={uploading}
                 onClick={handleImageSubmit}

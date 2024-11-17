@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { FaBookReader, FaRegCommentAlt  } from "react-icons/fa";
 import { FaWpforms, FaFileContract  } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
+import { GrUserWorker } from "react-icons/gr";
 
 export default function Dashsidebar() {
     const location = useLocation();
@@ -141,6 +142,19 @@ export default function Dashsidebar() {
                 as='div'
                 >
                  All User Comments
+                </Sidebar.Item>
+                </Link>
+                )}
+              
+                {currentUser.isAdmin && ( 
+                  
+                <Link to= "/dashboard?tab=trycomments">
+                <Sidebar.Item
+                active ={tab === 'trycomments'}
+                icon = {GrUserWorker  }
+                as='div'
+                >
+                 Worker Status
                 </Sidebar.Item>
                 </Link>
                 )}
