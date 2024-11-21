@@ -49,7 +49,7 @@ export default function Home() {
     <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">
       <h1 className=
       'text-3xl font-bold lg:text-6xl'>Welcome to Skills Scout</h1>
-      <p className='text-gray-500 text-xs sm:text-sm'>This webiste will help you to find the workers such as plumber, mechanics, catering, doctors and driver 
+      <p className='text-gray-500 text-xs sm:text-sm'>Our webiste will help you to find the workers such as plumber, mechanics, catering, doctors and driver 
         <br />that you required on the basis of day and hours.</p>
 
       <Link to='/workers' className='text-xs sm:text-xs text-teal-500

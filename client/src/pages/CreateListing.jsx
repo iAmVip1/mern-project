@@ -287,11 +287,14 @@ const handleSubmit = async (e) => {
                 </div>
             ))
         }
+        {currentUser.isWorker && ( 
+
         <Button 
         disabled={loading || uploading}
         className='bg-gradient-to-r from-fuchsia-500 to-cyan-500' type='submit'  outline>
           {loading ? 'Creating...' : 'Create post'}
          </Button>
+        )}
          {error && <p className='text-red-700 text-sm'>{error}</p>}
         </div>
     </form>
