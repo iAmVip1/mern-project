@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Modal, Table, Button } from 'flowbite-react';
+import axios from 'axios';
 
 export default function DashUserApplication() {
   const {currentUser} = useSelector((state) => state.user)
@@ -27,6 +28,21 @@ export default function DashUserApplication() {
     }
   }, [currentUser._id]
 )
+const buyFunction = async (currentUserId, applicationId) => {
+  try {
+    const response = await axios.post('http://localhost:3000/payment', {
+      userId: currentUserId,
+      applicationId: applicationId,
+      email: currentUser.email, // Ensure you pass the email as Stripe needs it
+    });
+    if (response.status === 200) {
+      window.open(response.data.url, '_blank');
+    }
+  } catch (error) {
+    console.error('Error processing payment:', error);
+  }
+};
+
 
   const handleApplicationDelete = async (applicationId) => {
     try {
@@ -66,7 +82,7 @@ export default function DashUserApplication() {
         <Table hoverable className='shadow-md'>
         <Table.Head>
         <Table.HeadCell> Applied Date </Table.HeadCell>
-        <Table.HeadCell> Image </Table.HeadCell>
+        <Table.HeadCell> Document </Table.HeadCell>
         <Table.HeadCell> First Name </Table.HeadCell>
         <Table.HeadCell> Last Name </Table.HeadCell>
         <Table.HeadCell> Application ID </Table.HeadCell>
@@ -74,6 +90,7 @@ export default function DashUserApplication() {
         <Table.HeadCell> 
         <span>Edit</span>  
         </Table.HeadCell>
+        <Table.HeadCell> Application Payment </Table.HeadCell>
       </Table.Head>
       {userApplications.map((application) =>(
         <Table.Body className='divide-y' key={application._id}>
@@ -112,6 +129,11 @@ export default function DashUserApplication() {
             </button>
             </Link>
           </Table.Cell>
+
+          <Table.Cell>
+       <Button onClick={() => buyFunction(currentUser._id, application._id)}>Pay Now</Button>
+        </Table.Cell>
+
         </Table.Row>
       </Table.Body>
       ))}

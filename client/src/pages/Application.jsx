@@ -148,6 +148,17 @@ export default function Application() {
               </td>
             </tr>
 
+            {!currentUser.isAdmin && !currentUser.isWorker &&(
+
+            <tr>
+              <td colSpan="4" className=" ">
+                <Link to='/dashboard?tab=dashApp'> 
+                <Button className='w-full bg-gradient-to-r from-teal-400 to-yellow-200' outline> Proceed for payment </Button>
+                 </Link>
+                
+                </td>
+            </tr>
+            )}
             {currentUser.isAdmin &&(
 
             <tr>

@@ -35,36 +35,52 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.post('/payment', async (req, res) => {
+  const { userId, applicationId, email } = req.body;
+
+  if (!userId || !applicationId || !email) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
   try {
-      const product = await stripe.products.create({
-          name: "Application Form",
-      });
+    // Create a product for the application
+    const product = await stripe.products.create({
+      name: "Application Form",
+      description: `Application ID: ${applicationId}`,
+    });
+    
 
-      const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: 300 * 100, // 100 INR
-          currency: 'NPR',
-      });
+    // Create a price object
+    const price = await stripe.prices.create({
+      product: product.id,
+      unit_amount: 300 * 100, 
+      currency: 'npr',
+    });
 
-      const session = await stripe.checkout.sessions.create({
-          line_items: [
-              {
-                  price: price.id,
-                  quantity: 1,
-              }
-          ],
-          mode: 'payment',
-          success_url: 'http://localhost:5173/dashboard?tab=dashApp',
-          cancel_url: 'http://localhost:5173/dashboard?tab=profile',
-          customer_email: req.body.email,
-      });
+    // Create a checkout session
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          price: price.id,
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: 'http://localhost:5173/dashboard?tab=dashApp',
+      cancel_url: 'http://localhost:5173/dashboard?tab=profile',
+      customer_email: email,
+      metadata: {
+        userId,
+        applicationId,
+      },
+    });
 
-      res.json({ url: session.url });
+    res.json({ url: session.url });
   } catch (error) {
-      console.error('Error creating payment session:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error creating payment session:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000!!');
