@@ -70,6 +70,7 @@ export default function DashAllApplication() {
         <Table.HeadCell> Full Name </Table.HeadCell>
         <Table.HeadCell> User Email </Table.HeadCell>
         <Table.HeadCell> Application ID </Table.HeadCell>
+        <Table.HeadCell> Send Mail </Table.HeadCell>
         <Table.HeadCell> Delete </Table.HeadCell>
         
       </Table.Head>
@@ -96,6 +97,15 @@ export default function DashAllApplication() {
           </Table.Cell>
           <Table.Cell>
           <p className=''>{application._id}</p>
+          </Table.Cell>
+          <Table.Cell>
+          <Link
+          to={`mailto:${application.userMail}?subject=Application No. ${application._id}&body=
+          ${application.fname} ${application.mname} ${application.lname} Your application is verified`}
+          className='bg-gradient-to-r from-green-500 to-indigo-500 text-white text-center p-3 uppercase rounded-lg hover:opacity-70'
+          >
+            Send Mail          
+          </Link>
           </Table.Cell>
           <Table.Cell>
             <button onClick={() => handleApplicationDelete(application._id)}

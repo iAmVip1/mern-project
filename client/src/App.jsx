@@ -17,6 +17,8 @@ import CreateApplication from './pages/CreateApplication';
 import Agreement from './pages/Agreement';
 import UpdateApplication from './pages/UpdateApplication';
 import Application from './pages/Application';
+import Success from './pages/Success';
+import Failure from './pages/Failure';
 
 
 export default function App() {
@@ -46,6 +48,8 @@ export default function App() {
 
         </Route>
         <Route path="/about" element={<About />} />
+        <Route path="/success" element={<Success />} />
+        <Route path="/fail" element={<Failure />} />
         
         <Route path='/listing/:listingId' element={<Listing />} />
         
