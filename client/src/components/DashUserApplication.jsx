@@ -131,7 +131,8 @@ const buyFunction = async (currentUserId, applicationId) => {
           </Table.Cell>
 
           <Table.Cell>
-       <Button onClick={() => buyFunction(currentUser._id, application._id)}>Pay Now</Button>
+       <Button className='bg-gradient-to-r from-orange-500 to-green-600' outline
+        onClick={() => buyFunction(currentUser._id, application._id)}>Pay Now</Button>
         </Table.Cell>
 
         </Table.Row>

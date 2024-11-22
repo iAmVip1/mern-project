@@ -153,7 +153,7 @@ export default function Application() {
             <tr>
               <td colSpan="4" className=" ">
                 <Link to='/dashboard?tab=dashApp'> 
-                <Button className='w-full bg-gradient-to-r from-teal-400 to-yellow-200' outline> Proceed for payment </Button>
+                <Button className='w-full bg-gradient-to-r from-teal-400 to-yellow-200' outline> Accept and continue </Button>
                  </Link>
                 
                 </td>

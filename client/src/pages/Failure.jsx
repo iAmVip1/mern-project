@@ -17,10 +17,10 @@ export default function Failure() {
           <br />
           Please try again.
         </p>
-        <Link to="/ "
+        <Link to="/dashboard?tab=dashApp"
           className="bg-black text-white py-2 px-6 rounded hover:bg-gray-800 transition"
           >
-          Go to homepage
+          Continue and Try again
         </Link>
       </div>
     </div>
